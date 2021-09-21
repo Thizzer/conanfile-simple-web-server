@@ -5,7 +5,7 @@ See https://gitlab.com/eidheim/Simple-Web-Server for more information on the lib
 
 ```
 conan create . --build
-conan upload --force -c "simple-web-server/*" -r <your-remote>
+conan upload -c "simple-web-server/*" -r <your-remote>
 ```
 
 # Using in CMake
