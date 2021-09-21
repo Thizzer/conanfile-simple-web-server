@@ -3,7 +3,7 @@ from six import StringIO
 
 class SimpleWebServerConan(ConanFile):
     name = "Simple-Web-Server"
-    version = "3.3.1"
+    version = "3.1.1"
     license = "https://gitlab.com/eidheim/Simple-Web-Server/-/blob/master/LICENSE"
     url = "https://gitlab.com/eidheim/Simple-Web-Server"
     description = "A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio. Created to be an easy way to make REST resources available from C++ applications."
@@ -31,7 +31,7 @@ class SimpleWebServerConan(ConanFile):
         self.run("git clone " + self.source_url)
 
         with tools.chdir(self.source_subfolder):
-            version_tag = "FILE{0}".format(self.version.replace('.', '_'))
+            version_tag = "v{0}".format(self.version)
             tag_info = StringIO()
             self.run("git tag -l {0}".format(version_tag), output=tag_info)
             if len(tag_info.getvalue().strip()) != 0:
